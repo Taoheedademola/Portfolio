@@ -188,8 +188,8 @@ const Technologies = () => {
     { id: 1, name: 'all', title: 'All' },
     { id: 2, name: 'frontend', title: 'Frontend' },
     { id: 3, name: 'backend', title: 'Backend' },
-    { id: 4, name: 'Mobile', title: 'Mobile' },
-    { id: 5, name: 'smartcontract', title: 'smartcontract' },
+    { id: 4, name: 'mobile', title: 'Mobile' },
+    { id: 5, name: 'smartcontract', title: 'Smartcontract' },
     { id: 6, name: 'tools', title: 'Tools' },
   ];
 
