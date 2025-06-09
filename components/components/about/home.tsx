@@ -5,7 +5,7 @@ import { ArrowDownTrayIcon } from '@heroicons/react/24/outline';
 
 const AboutHome = () => {
   const hobbies = [
-    "Coding", "Gaming", "Hiking", "Reading", 
+    "Coding", "Gaming", "Hiking", "Reading",
     "Game Development", "Open Source Contributions"
   ];
 
@@ -41,7 +41,7 @@ const AboutHome = () => {
               I work with businesses of all sizes around the world, crafting innovative solutions using the latest technologies to drive success and growth.
             </p>
             <motion.a
-              href="./Ademola.pdf"
+              href="/Ademola.pdf"
               download
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
