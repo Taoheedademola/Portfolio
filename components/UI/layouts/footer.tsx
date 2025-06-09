@@ -1,6 +1,7 @@
 'use client'; // Add this at the very top
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/outline";
 import { LinkedinIcon, GithubIcon, TwitterIcon } from "@/components/components/Icons"; 
 
@@ -33,7 +34,6 @@ const Footer = () => {
                 >
                   <GithubIcon className="h-6 w-6" />
                 </motion.a>
-                
                 <motion.a 
                   href="https://x.com/demo_web3" 
                   target="_blank"
@@ -58,19 +58,20 @@ const Footer = () => {
               </motion.p>
               
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-white text-black px-8 py-4 font-medium tracking-wider uppercase relative overflow-hidden group"
-                >
-                  <span className="relative z-10">Get in touch</span>
-                  
-                  <motion.span 
-                    className="absolute inset-0 bg-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    initial={{ scale: 0 }}
-                    whileHover={{ scale: 1 }}
-                  />
-                </motion.button>
+                <Link href="/contact" passHref>
+                  <motion.a
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-white text-black px-8 py-4 font-medium tracking-wider uppercase relative overflow-hidden group inline-block"
+                  >
+                    <span className="relative z-10">Get in touch</span>
+                    <motion.span 
+                      className="absolute inset-0 bg-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      initial={{ scale: 0 }}
+                      whileHover={{ scale: 1 }}
+                    />
+                  </motion.a>
+                </Link>
 
                 <motion.div 
                   className="flex items-center gap-3"
@@ -115,7 +116,7 @@ const Footer = () => {
                   whileHover={{ x: 4 }}
                   className="hover:text-gray-300 transition-colors"
                 >
-                 bolajiademola815@gmail.com
+                  bolajiademola815@gmail.com
                 </motion.p>
               </div>
             </div>
