@@ -115,7 +115,7 @@ const Footer = () => {
                   whileHover={{ x: 4 }}
                   className="hover:text-gray-300 transition-colors"
                 >
-                 Demol@.com
+                 bolajiademola815@gmail.com
                 </motion.p>
               </div>
             </div>
