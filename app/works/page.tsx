@@ -51,19 +51,11 @@ const WorkPage = () => {
       title: 'Portfolio Website',
       description: 'Minimalist portfolio design with smooth animations and dark mode.',
       tags: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
-      link: 'https://tedecx.vercel.app',
+      link: 'https://portfolio-taoheedademolas-projects.vercel.app',
       image: image6,
       category: 'design'
     },
-    // {
-    //   id: 4,
-    //   title: 'Task Management System',
-    //   description: 'Collaborative task management tool with real-time updates.',
-    //   tags: ['Vue.js', 'Express', 'WebSockets'],
-    //   link: 'https://tasks.example.com',
-    //   image: '/project4.jpg',
-    //   category: 'web'
-    // },
+   
     {
       id: 6,
       title: 'Design System',

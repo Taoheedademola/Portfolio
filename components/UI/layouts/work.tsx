@@ -79,7 +79,7 @@ const Work = () => {
           </motion.h2>
           <motion.div variants={itemVariant}>
             <Link 
-              href="/work" 
+              href="/works" 
               className="inline-block bg-gray-900 text-white py-3 px-6 md:px-8 text-base font-medium uppercase tracking-wide hover:bg-gray-800 transition-all duration-300 rounded-lg"
             >
               View All Projects
