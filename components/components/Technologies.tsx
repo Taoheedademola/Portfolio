@@ -4,14 +4,17 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Technologies.module.css';
 import { SiNestjs, SiFastapi, SiExpo, SiIonic, SiApachecordova, SiCapacitor, SiSolidity, SiEthereum, SiChainlink, SiPolygon, SiFlutter } from 'react-icons/si';
-import { SiJquery, SiAstro, SiRemix, SiQwik, SiSvelte } from 'react-icons/si';
+import { SiJquery, SiAstro, SiRemix, SiQwik, SiSvelte, SiOpenzeppelin, SiIpfs } from 'react-icons/si';
 import { SiVercel, SiNetlify, SiHeroku, SiCypress, SiBabel, SiGatsby, SiCloudflare } from 'react-icons/si';
 import {
   FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaGithub, FaNpm,
   FaPython, FaPhp, FaLaravel,
   FaAndroid,
-  FaApple
+  FaApple,
+   FaRainbow
 } from 'react-icons/fa';
+import { GiSpiderWeb } from "react-icons/gi";
+
 import {
   SiTypescript, SiNextdotjs, SiExpress, SiMongodb, SiTailwindcss,
   SiRedux, SiGraphql, SiDocker, SiJest, SiReactrouter,  SiVuedotjs,
@@ -87,6 +90,7 @@ const Technologies = () => {
       'Babel': '#F9DC3E',
       'Gatsby': '#663399',
       'Cloudflare': '#F38020',
+      "etherjs":"#e6c926ff",
         Expo: '#000020',
     Android: '#3DDC84',
     Apple: '#999999',
@@ -103,6 +107,10 @@ const Technologies = () => {
     Chainlink: '#2A5ADA',
     Polygon: '#8247E5',
     Hardhat: '#F6851B',
+    Wagmi: "#22123dff",
+    OpenZeppelin: "#1a181cff",
+    IPFS: "#269365e9",
+    RainbowKit: "#2b821d8a"
 
     };
     return colorMap[name] || '#4B5563';
@@ -180,6 +188,42 @@ const Technologies = () => {
     { id: 54, name: 'Chainlink', icon: <SiChainlink />, category: 'smartcontract', color: getTechColor('Chainlink') },
     { id: 55, name: 'Polygon', icon: <SiPolygon />, category: 'smartcontract', color: getTechColor('Polygon') },
     { id: 56, name: 'Hardhat', icon: <BiSolidHardHat />, category: 'smartcontract', color: getTechColor('Hardhat') },
+    {
+  id: 57,
+  name: 'Ethers.js',
+  icon: <SiEthereum />,
+  category: 'smartcontract',
+  color: getTechColor('Ethers.js'),
+},
+{
+  id: 59,
+  name: 'Wagmi',
+  icon: <GiSpiderWeb />,
+  category: 'smartcontract',
+  color: getTechColor('Wagmi'),
+},
+{
+  id: 60,
+  name: 'OpenZeppelin',
+  icon: <SiOpenzeppelin />,
+  category: 'smartcontract',
+  color: getTechColor('OpenZeppelin'),
+},
+{
+  id: 61,
+  name: 'IPFS',
+  icon: <SiIpfs />,
+  category: 'smartcontract',
+  color: getTechColor('IPFS'),
+},
+{
+  id: 62,
+  name: 'RainbowKit',
+  icon: <FaRainbow />,
+  category: 'smartcontract',
+  color: getTechColor('RainbowKit'),
+}
+
  
     
   ];
