@@ -41,7 +41,7 @@ const AboutHome = () => {
               I work with businesses of all sizes around the world, crafting innovative solutions using the latest technologies to drive success and growth.
             </p>
             <motion.a
-              href="/Ademola.pdf"
+              href="/Ademola (2).pdf"
               download
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
