@@ -3,36 +3,33 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Technologies.module.css';
-import { SiNestjs, SiFastapi, SiExpo, SiIonic, SiApachecordova, SiCapacitor, SiSolidity, SiEthereum, SiChainlink, SiPolygon, SiFlutter } from 'react-icons/si';
-import { SiJquery, SiAstro, SiRemix, SiQwik, SiSvelte, SiOpenzeppelin, SiIpfs } from 'react-icons/si';
-import { SiVercel, SiNetlify, SiHeroku, SiCypress, SiBabel, SiGatsby, SiCloudflare } from 'react-icons/si';
 import {
   FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaGithub, FaNpm,
-  FaPython, FaPhp, FaLaravel,
-  FaAndroid,
-  FaApple,
-   FaRainbow
+  FaAndroid, FaApple, FaRainbow
 } from 'react-icons/fa';
-import { GiSpiderWeb } from "react-icons/gi";
-
 import {
   SiTypescript, SiNextdotjs, SiExpress, SiMongodb, SiTailwindcss,
-  SiRedux, SiGraphql, SiDocker, SiJest, SiReactrouter,  SiVuedotjs,
-  SiAngular, SiBootstrap, SiSass, SiLess, SiGo, SiWebpack,
-  SiVite, SiEslint, SiPrettier, SiPostman, SiFigma
+  SiRedux, SiGraphql, SiDocker, SiJest, SiReactrouter, SiVuedotjs,
+  SiAngular, SiBootstrap, SiSass, SiLess, SiWebpack,
+  SiVite, SiEslint, SiPrettier, SiPostman, SiFigma,
+  SiJquery, SiAstro, SiRemix, SiExpo, SiIonic, SiApachecordova, SiCapacitor,
+  SiSolidity, SiEthereum, SiChainlink, SiPolygon, SiOpenzeppelin, SiIpfs,
+  SiVercel, SiNetlify, SiHeroku, SiCypress, SiBabel, SiGatsby, SiCloudflare
 } from 'react-icons/si';
 import { TbBrandReactNative } from 'react-icons/tb';
+import { GiSpiderWeb } from 'react-icons/gi';
 import { BiSolidHardHat } from 'react-icons/bi';
+import { SiFlutter } from "react-icons/si";
 
 interface TechItem {
   id: number;
   name: string;
   icon: React.ReactNode;
-  category: 'frontend' | 'backend' | 'tools'| "mobile" | "smartcontract" | 'all';
+  category: 'frontend' | 'backend' | 'tools' | 'mobile' | 'smartcontract' | 'all';
   color?: string;
 }
 
-type CategoryType = 'frontend' | 'backend' | 'tools'| "mobile" | "smartcontract" | 'all';
+type CategoryType = TechItem['category'];
 
 const Technologies = () => {
   const [activeCategory, setActiveCategory] = useState<CategoryType>('all');
@@ -55,15 +52,8 @@ const Technologies = () => {
       'LESS': '#1D365D',
       'Node.js': '#339933',
       'Express': '#000000',
-      'Python': '#3776AB',
-      'PHP': '#8892BF',
-      'Laravel': '#FF2D20',
-      'Ruby on Rails': '#CC0000',
-      'Go': '#00ADD8',
       'GraphQL': '#E10098',
       'MongoDB': '#47A248',
-      'PostgreSQL': '#336791',
-      'Django': '#092E20',
       'React Native': '#61DAFB',
       'Git': '#F05032',
       'GitHub': '#181717',
@@ -79,39 +69,30 @@ const Technologies = () => {
       'jQuery': '#0769AD',
       'Astro': '#FF5D01',
       'Remix': '#000000',
-      'Qwik': '#18B6F6',
-      'Svelte': '#FF3E00',
-      'NestJS': '#E0234E',
-      'FastAPI': '#009688',
+      'Expo': '#000020',
+      'Android': '#3DDC84',
+      'Apple': '#999999',
+      'Ionic': '#3880FF',
+      'Cordova': '#EE4C40',
+      'Capacitor': '#3B3B3B',
+      'Flutter': '#02569B',
+      'Solidity': '#363636',
+      'Ethereum': '#3C3C3D',
+      'Chainlink': '#2A5ADA',
+      'Polygon': '#8247E5',
+      'Hardhat': '#F6851B',
+      'Ethers.js': '#e6c926ff',
+      'Wagmi': '#22123dff',
+      'OpenZeppelin': '#1a181cff',
+      'IPFS': '#269365e9',
+      'RainbowKit': '#2b821d8a',
       'Vercel': '#000000',
       'Netlify': '#00C7B7',
       'Heroku': '#430098',
       'Cypress': '#17202C',
       'Babel': '#F9DC3E',
       'Gatsby': '#663399',
-      'Cloudflare': '#F38020',
-      "etherjs":"#e6c926ff",
-        Expo: '#000020',
-    Android: '#3DDC84',
-    Apple: '#999999',
-    Ionic: '#3880FF',
-    'Ionic Framework': '#3880FF',
-    Flutter: '#02569B',
-    Xamarin: '#3498DB',
-    Cordova: '#EE4C40',
-    Capacitor: '#3B3B3B',
-
-    // Smart Contracts
-    Solidity: '#363636',
-    Ethereum: '#3C3C3D',
-    Chainlink: '#2A5ADA',
-    Polygon: '#8247E5',
-    Hardhat: '#F6851B',
-    Wagmi: "#22123dff",
-    OpenZeppelin: "#1a181cff",
-    IPFS: "#269365e9",
-    RainbowKit: "#2b821d8a"
-
+      'Cloudflare': '#F38020'
     };
     return colorMap[name] || '#4B5563';
   };
@@ -132,100 +113,57 @@ const Technologies = () => {
     { id: 12, name: "Bootstrap", icon: <SiBootstrap />, category: 'frontend', color: getTechColor("Bootstrap") },
     { id: 13, name: "SASS", icon: <SiSass />, category: 'frontend', color: getTechColor("SASS") },
     { id: 14, name: "LESS", icon: <SiLess />, category: 'frontend', color: getTechColor("LESS") },
-    { id: 15, name: "React Native", icon: <TbBrandReactNative />, category: 'frontend', color: getTechColor("React Native") },
-    { id: 38, name: "jQuery", icon: <SiJquery />, category: 'frontend', color: getTechColor("jQuery") },
-    { id: 39, name: "Astro", icon: <SiAstro />, category: 'frontend', color: getTechColor("Astro") },
-    { id: 40, name: "Remix", icon: <SiRemix />, category: 'frontend', color: getTechColor("Remix") },
-    { id: 41, name: "Qwik", icon: <SiQwik />, category: 'frontend', color: getTechColor("Qwik") },
-    { id: 42, name: "Svelte", icon: <SiSvelte />, category: 'frontend', color: getTechColor("Svelte") },
-
+    { id: 16, name: "jQuery", icon: <SiJquery />, category: 'frontend', color: getTechColor("jQuery") },
+    { id: 17, name: "Astro", icon: <SiAstro />, category: 'frontend', color: getTechColor("Astro") },
+    { id: 18, name: "Remix", icon: <SiRemix />, category: 'frontend', color: getTechColor("Remix") },
     
-
     // Backend
-    { id: 16, name: "Node.js", icon: <FaNodeJs />, category: 'backend', color: getTechColor("Node.js") },
-    { id: 17, name: "Express", icon: <SiExpress />, category: 'backend', color: getTechColor("Express") },
-    { id: 18, name: "Python", icon: <FaPython />, category: 'backend', color: getTechColor("Python") },
-    { id: 19, name: "PHP", icon: <FaPhp />, category: 'backend', color: getTechColor("PHP") },
-    { id: 20, name: "Laravel", icon: <FaLaravel />, category: 'backend', color: getTechColor("Laravel") },
-    // { id: 21, name: "Ruby on Rails", icon: <SiRubyonrails />, category: 'backend', color: getTechColor("Ruby on Rails") },
-    { id: 22, name: "Go", icon: <SiGo />, category: 'backend', color: getTechColor("Go") },
-    { id: 23, name: "GraphQL", icon: <SiGraphql />, category: 'backend', color: getTechColor("GraphQL") },
-    { id: 24, name: "MongoDB", icon: <SiMongodb />, category: 'backend', color: getTechColor("MongoDB") },
-    // { id: 25, name: "PostgreSQL", icon: <SiPostgresql />, category: 'backend', color: getTechColor("PostgreSQL") },
-    { id: 43, name: "NestJS", icon: <SiNestjs />, category: 'backend', color: getTechColor("NestJS") },
-    { id: 44, name: "FastAPI", icon: <SiFastapi />, category: 'backend', color: getTechColor("FastAPI") },
-
-    // Tools
-    { id: 27, name: "Git", icon: <FaGitAlt />, category: 'tools', color: getTechColor("Git") },
-    { id: 28, name: "GitHub", icon: <FaGithub />, category: 'tools', color: getTechColor("GitHub") },
-    { id: 29, name: "Docker", icon: <SiDocker />, category: 'tools', color: getTechColor("Docker") },
-    { id: 30, name: "Jest", icon: <SiJest />, category: 'tools', color: getTechColor("Jest") },
-    { id: 31, name: "npm", icon: <FaNpm />, category: 'tools', color: getTechColor("npm") },
-    { id: 32, name: "Vite", icon: <SiVite />, category: 'tools', color: getTechColor("Vite") },
-    { id: 33, name: "Webpack", icon: <SiWebpack />, category: 'tools', color: getTechColor("Webpack") },
-    { id: 34, name: "ESLint", icon: <SiEslint />, category: 'tools', color: getTechColor("ESLint") },
-    { id: 35, name: "Prettier", icon: <SiPrettier />, category: 'tools', color: getTechColor("Prettier") },
-    { id: 36, name: "Postman", icon: <SiPostman />, category: 'tools', color: getTechColor("Postman") },
-    { id: 37, name: "Figma", icon: <SiFigma />, category: 'tools', color: getTechColor("Figma") },
-    { id: 45, name: "Vercel", icon: <SiVercel />, category: 'tools', color: getTechColor("Vercel") },
-    { id: 46, name: "Netlify", icon: <SiNetlify />, category: 'tools', color: getTechColor("Netlify") },
-    { id: 47, name: "Heroku", icon: <SiHeroku />, category: 'tools', color: getTechColor("Heroku") },
-    { id: 48, name: "Cypress", icon: <SiCypress />, category: 'tools', color: getTechColor("Cypress") },
-    { id: 49, name: "Babel", icon: <SiBabel />, category: 'tools', color: getTechColor("Babel") },
-    { id: 50, name: "Gatsby", icon: <SiGatsby />, category: 'tools', color: getTechColor("Gatsby") },
-    { id: 51, name: "Cloudflare", icon: <SiCloudflare />, category: 'tools', color: getTechColor("Cloudflare") },
-     // Mobile
-    { id: 57, name: 'Expo', icon: <SiExpo />, category: 'mobile', color: getTechColor('Expo') },
-    { id: 58, name: 'Android', icon: <FaAndroid />, category: 'mobile', color: getTechColor('Android') },
-    { id: 59, name: 'Apple', icon: <FaApple />, category: 'mobile', color: getTechColor('Apple') },
-    { id: 60, name: 'Ionic', icon: <SiIonic />, category: 'mobile', color: getTechColor('Ionic') },
-    { id: 61, name: 'Cordova', icon: <SiApachecordova />, category: 'mobile', color: getTechColor('Cordova') },
-    { id: 62, name: 'Capacitor', icon: <SiCapacitor />, category: 'mobile', color: getTechColor('Capacitor') },
-{id: 63, name: "Flutter", icon: <SiFlutter />, category: "mobile", color: getTechColor("Flutter"), },
-    // Smart Contracts
-    { id: 52, name: 'Solidity', icon: <SiSolidity />, category: 'smartcontract', color: getTechColor('Solidity') },
-    { id: 53, name: 'Ethereum', icon: <SiEthereum />, category: 'smartcontract', color: getTechColor('Ethereum') },
-    { id: 54, name: 'Chainlink', icon: <SiChainlink />, category: 'smartcontract', color: getTechColor('Chainlink') },
-    { id: 55, name: 'Polygon', icon: <SiPolygon />, category: 'smartcontract', color: getTechColor('Polygon') },
-    { id: 56, name: 'Hardhat', icon: <BiSolidHardHat />, category: 'smartcontract', color: getTechColor('Hardhat') },
-    {
-  id: 57,
-  name: 'Ethers.js',
-  icon: <SiEthereum />,
-  category: 'smartcontract',
-  color: getTechColor('Ethers.js'),
-},
-{
-  id: 59,
-  name: 'Wagmi',
-  icon: <GiSpiderWeb />,
-  category: 'smartcontract',
-  color: getTechColor('Wagmi'),
-},
-{
-  id: 60,
-  name: 'OpenZeppelin',
-  icon: <SiOpenzeppelin />,
-  category: 'smartcontract',
-  color: getTechColor('OpenZeppelin'),
-},
-{
-  id: 61,
-  name: 'IPFS',
-  icon: <SiIpfs />,
-  category: 'smartcontract',
-  color: getTechColor('IPFS'),
-},
-{
-  id: 62,
-  name: 'RainbowKit',
-  icon: <FaRainbow />,
-  category: 'smartcontract',
-  color: getTechColor('RainbowKit'),
-}
-
- 
+    { id: 19, name: "Node.js", icon: <FaNodeJs />, category: 'backend', color: getTechColor("Node.js") },
+    { id: 20, name: "Express", icon: <SiExpress />, category: 'backend', color: getTechColor("Express") },
+    { id: 21, name: "GraphQL", icon: <SiGraphql />, category: 'backend', color: getTechColor("GraphQL") },
+    { id: 22, name: "MongoDB", icon: <SiMongodb />, category: 'backend', color: getTechColor("MongoDB") },
     
+    // Tools
+    { id: 23, name: "Git", icon: <FaGitAlt />, category: 'tools', color: getTechColor("Git") },
+    { id: 24, name: "GitHub", icon: <FaGithub />, category: 'tools', color: getTechColor("GitHub") },
+    { id: 25, name: "Docker", icon: <SiDocker />, category: 'tools', color: getTechColor("Docker") },
+    { id: 26, name: "Jest", icon: <SiJest />, category: 'tools', color: getTechColor("Jest") },
+    { id: 27, name: "npm", icon: <FaNpm />, category: 'tools', color: getTechColor("npm") },
+    { id: 28, name: "Vite", icon: <SiVite />, category: 'tools', color: getTechColor("Vite") },
+    { id: 29, name: "Webpack", icon: <SiWebpack />, category: 'tools', color: getTechColor("Webpack") },
+    { id: 30, name: "ESLint", icon: <SiEslint />, category: 'tools', color: getTechColor("ESLint") },
+    { id: 31, name: "Prettier", icon: <SiPrettier />, category: 'tools', color: getTechColor("Prettier") },
+    { id: 32, name: "Postman", icon: <SiPostman />, category: 'tools', color: getTechColor("Postman") },
+    { id: 33, name: "Figma", icon: <SiFigma />, category: 'tools', color: getTechColor("Figma") },
+    { id: 34, name: "Vercel", icon: <SiVercel />, category: 'tools', color: getTechColor("Vercel") },
+    { id: 35, name: "Netlify", icon: <SiNetlify />, category: 'tools', color: getTechColor("Netlify") },
+    { id: 36, name: "Heroku", icon: <SiHeroku />, category: 'tools', color: getTechColor("Heroku") },
+    { id: 37, name: "Cypress", icon: <SiCypress />, category: 'tools', color: getTechColor("Cypress") },
+    { id: 38, name: "Babel", icon: <SiBabel />, category: 'tools', color: getTechColor("Babel") },
+    { id: 39, name: "Gatsby", icon: <SiGatsby />, category: 'tools', color: getTechColor("Gatsby") },
+    { id: 40, name: "Cloudflare", icon: <SiCloudflare />, category: 'tools', color: getTechColor("Cloudflare") },
+    
+    // Mobile
+    { id: 41, name: 'Expo', icon: <SiExpo />, category: 'mobile', color: getTechColor('Expo') },
+    { id: 42, name: 'Android', icon: <FaAndroid />, category: 'mobile', color: getTechColor('Android') },
+    { id: 15, name: "React Native", icon: <TbBrandReactNative />, category: 'mobile', color: getTechColor("React Native") },
+    { id: 43, name: 'Apple', icon: <FaApple />, category: 'mobile', color: getTechColor('Apple') },
+    { id: 44, name: 'Ionic', icon: <SiIonic />, category: 'mobile', color: getTechColor('Ionic') },
+    { id: 45, name: 'Cordova', icon: <SiApachecordova />, category: 'mobile', color: getTechColor('Cordova') },
+    { id: 46, name: 'Capacitor', icon: <SiCapacitor />, category: 'mobile', color: getTechColor('Capacitor') },
+    { id: 47, name: "Flutter", icon: <SiFlutter />, category: "mobile", color: getTechColor("Flutter") },
+
+    // Smartcontract
+    { id: 48, name: 'Solidity', icon: <SiSolidity />, category: 'smartcontract', color: getTechColor('Solidity') },
+    { id: 49, name: 'Ethereum', icon: <SiEthereum />, category: 'smartcontract', color: getTechColor('Ethereum') },
+    { id: 50, name: 'Chainlink', icon: <SiChainlink />, category: 'smartcontract', color: getTechColor('Chainlink') },
+    { id: 51, name: 'Polygon', icon: <SiPolygon />, category: 'smartcontract', color: getTechColor('Polygon') },
+    { id: 52, name: 'Hardhat', icon: <BiSolidHardHat />, category: 'smartcontract', color: getTechColor('Hardhat') },
+    { id: 53, name: 'Ethers.js', icon: <SiEthereum />, category: 'smartcontract', color: getTechColor('Ethers.js') },
+    { id: 54, name: 'Wagmi', icon: <GiSpiderWeb />, category: 'smartcontract', color: getTechColor('Wagmi') },
+    { id: 55, name: 'OpenZeppelin', icon: <SiOpenzeppelin />, category: 'smartcontract', color: getTechColor('OpenZeppelin') },
+    { id: 56, name: 'IPFS', icon: <SiIpfs />, category: 'smartcontract', color: getTechColor('IPFS') },
+    { id: 57, name: 'RainbowKit', icon: <FaRainbow />, category: 'smartcontract', color: getTechColor('RainbowKit') },
   ];
 
   const categories = [
@@ -237,26 +175,9 @@ const Technologies = () => {
     { id: 6, name: 'tools', title: 'Tools' },
   ];
 
-  const container = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 }
-    }
-  };
-
-  // const item = {
-  //   hidden: { y: 20, opacity: 0 },
-  //   visible: {
-  //     y: 0,
-  //     opacity: 1,
-  //     transition: { duration: 0.5 }
-  //   }
-  // };
-
   const filteredTech = activeCategory === 'all'
     ? techStack
-    : techStack.filter(tech => tech.category === activeCategory);
+    : techStack.filter((tech) => tech.category === activeCategory);
 
   return (
     <section className={styles.section} id="technologies">
@@ -280,13 +201,7 @@ const Technologies = () => {
           ))}
         </div>
 
-        <motion.div
-          className={styles.container}
-          variants={container}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-        >
+        <motion.div className={styles.container}>
           <motion.div className={styles.techGrid}>
             <AnimatePresence mode="wait">
               {filteredTech.map((tech) => (
@@ -299,10 +214,7 @@ const Technologies = () => {
                   transition={{ duration: 0.3 }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div
-                    className={styles.techIcon}
-                    style={{ color: tech.color }}
-                  >
+                  <div className={styles.techIcon} style={{ color: tech.color }}>
                     {tech.icon}
                   </div>
                   <span className={styles.techName}>{tech.name}</span>
